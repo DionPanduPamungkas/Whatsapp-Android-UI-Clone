@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2eadf;
+    transition: 0.5s;
+}
+.container {
+    position: relative;
+    width: 340px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+}
+.container header {
+    position: relative;
+    background-color: #008069;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-radius: 15px 15px 0 0 !important; */
+}
+ 
+.container header a.logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.container header .action {
+    position: relative;
+    display: flex;
+    gap: 15px;
+}
+.container header .action a {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+    display: flex;
+}
+.container .tabs input {
+    visibility: hidden;
+    display: none;
+}
+.button {
+    position: relative;
+    display: flex;
+    background-color: #008069;
+    border-bottom: 1px solid rgba(0,0,0,0.25)
+}
+.button label {
+    width: 33.33%;
+    color: #fff;
+    opacity: 0.75;
+    text-align: center;
+    padding: 5px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+.tabs input:nth-child(1):checked ~ .button label:nth-child(1) ,
+.tabs input:nth-child(2):checked ~ .button label:nth-child(2) ,
+.tabs input:nth-child(3):checked ~ .button label:nth-child(3) {
+    opacity: 1;
+}
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 33.33%;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.tabs input:nth-child(1):checked ~ .button .underline {
+    left: 0;
+}
+.tabs input:nth-child(2):checked ~ .button .underline {
+    left: 33.333%;
+}
+.tabs input:nth-child(3):checked ~ .button .underline {
+    left: 66.666%;
+}
+.content {
+    position: relative;
+    width: calc(340px * 3);
+    display: flex;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.content .box {
+    position: relative;
+    width: 340px;
+}
+.tabs input:nth-child(1):checked ~ .content {
+    left:calc(340px * 0);
+}
+
+.tabs input:nth-child(2):checked ~ .content {
+    left:calc(340px * -1);
+}
+
+.tabs input:nth-child(3):checked ~ .content {
+    left:calc(340px * -2);
+}
+
+.content .data {
+    position: relative;
+    width: 100%;
+    height: 510px;
+}
+.chatlist {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+}
+.chatlist .block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 15px 10px;
+    display: flex;
+    cursor: pointer;
+}
+.chatlist .block:hover {
+    background: #f5f5f5;
+}
+.chatlist .block .imgbox {
+    position: relative;
+    min-width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.chatlist .block .imgbox img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.chatlist .block .details {
+    position: relative;
+    width: 100%;
+}
+.chatlist .block .details .listhead {
+    display: flex;
+    justify-content: space-between;
+}
+.chatlist .block .details .listhead h4 {
+    font-size: 1em;
+    font-weight: 600;
+    width: 100%;
+    color: #111;
+}
+.chatlist .block .details . .time {
+    font-size: 0.75em;
+    color: #555
+}
+.chatlist .block .details .message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chatlist .block .details .message p {
+    color: #555;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    font-size: 0.9em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+.chatlist .block.unread .details .listhead .time {
+    color: #06d755;
+}
+.chatlist .block.unread .details p {
+    color: #111;
+    font-weight: 600;
+}
+.details .message b {
+    background-color: #06d755;
+    color: #fff;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+}
+
+
+
